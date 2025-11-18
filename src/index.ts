@@ -30,7 +30,7 @@ setupChatSocket(io);
 app.use(cors({
   origin: [
     "https://tutonlines.netlify.app/", // frontend producción
-    "tutonline-frontend.up.railway.app",
+    "https://tutonline-frontend.up.railway.app/",
     "http://localhost:5173",     
     "http://localhost:5174",
     "http://localhost:5175",
