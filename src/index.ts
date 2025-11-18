@@ -13,6 +13,8 @@ import { setupChatSocket } from "./services/chatSocket";
 import chatRoutes from "./routes/chatRoutes";
 import dashboardRoutes from "./routes/dashboardRoutes";
 import mapRoutes from "./routes/mapsRoutes";
+import postsRoutes from "./routes/postRoutes";
+import tutorsExtras from "./routes/tutorExtrasRoutes";
 
 dotenv.config();
 
@@ -28,7 +30,11 @@ setupChatSocket(io);
 app.use(cors({
   origin: [
     "https://tutonlinescom.netlify.app", // frontend producción
-    "http://localhost:5173"           // frontend local
+    "http://localhost:5173",     
+    "http://localhost:5174",
+    "http://localhost:5175",
+    "http://localhost:5176",
+    "http://localhost:5177",   // frontend local
   ],
   credentials: true
 }));
@@ -45,6 +51,8 @@ app.use("/tutonline/video-sessions", videoSessionsRoutes);
 app.use("/tutonline/chat", chatRoutes);
 app.use("/tutonline/dashboard", dashboardRoutes);
 app.use("/tutonline/map", mapRoutes);
+app.use("/tutonline/posts", postsRoutes);
+app.use("/tutonline/tutors-extras", tutorsExtras);
 
 
 
