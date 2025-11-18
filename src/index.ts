@@ -25,7 +25,15 @@ const io = new Server(httpServer, {
 
 setupChatSocket(io);
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://tutonlinescom.netlify.app", // frontend producción
+    "http://localhost:5173"           // frontend local
+  ],
+  credentials: true
+}));
+
+
 app.use(express.json());
 
 // Rutas
